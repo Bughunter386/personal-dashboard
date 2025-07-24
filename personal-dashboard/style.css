@@ -1,0 +1,41 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f9fc;
+  color: #333;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dark-theme {
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+#time {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  background: #0077ff;
+  color: #fff;
+  border-radius: 5px;
+}
+
+input {
+  padding: 10px;
+  width: 60%;
+  margin-top: 10px;
+}

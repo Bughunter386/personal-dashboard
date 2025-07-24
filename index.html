@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ameer Nakamoto - Portfolio</title>
+</head>
+<body>
+    <link rel="stylesheet" href="style.css">
+
+  <header>
+    <h1>Ameer Nakamoto</h1>
+    <p>Web Developer in Training</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I’m currently learning web development, specializing in HTML, CSS, and JavaScript. This is my first portfolio page!</p>
+      <button id="toggleBtn">Show More</button>
+      <div id="extraInfo" style="display: none;margin-top: 10px;">
+        <p>I'm passionate about combining technology and creativity to solve real-world problems. Currently exploring CSS animations, Javascript logic, and eventually diving into React and backend!</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS (coming soon)</li>
+        <li>JavaScript (coming soon)</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <article>
+        <h3>Portfolio Website</h3>
+        <p>This very site, built with semantic HTML as part of my Week 1 project.</p>
+      </article>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message"></textarea><br><br>
+
+        <button type="submit">Send</button>
+      </form>
+<script>
+  window.onload = function() {
+    console.log("Welcome to Ameer’s Portfolio 🚀");
+    alert("Hi there! Thanks for visiting my portfolio 🙌");
+  }
+
+  const toggleBtn = document.getElementById('toggleBtn');
+  const extraInfo = document.getElementById('extraInfo');
+
+  toggleBtn.addEventListener('click', function() {
+    if (extraInfo.style.display === 'none') {
+      extraInfo.style.display = 'block';
+      toggleBtn.textContent = 'Show Less';
+    } else {
+      extraInfo.style.display = 'none';
+      toggleBtn.textContent = 'Show More';
+    }
+  });
+</script>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Ameer Nakamoto</p>
+  </footer>
+
+</body>
+</html>

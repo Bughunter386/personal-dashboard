@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ameer’s JS Quiz</title>
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+  <header>
+    <h1>JavaScript Quiz</h1>
+    <p>Test your web development knowledge</p>
+  </header>
+
+  <main>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. What does HTML stand for?</p>
+        <label><input type="radio" name="q1" value="a"> Hyper Text Markup Language</label><br>
+        <label><input type="radio" name="q1" value="b"> High Tech Modern Language</label><br>
+        <label><input type="radio" name="q1" value="c"> Hyper Transfer Markup Line</label>
+      </div>
+
+      <div class="question">
+        <p>2. Which CSS property controls the text size?</p>
+        <label><input type="radio" name="q2" value="a"> font-style</label><br>
+        <label><input type="radio" name="q2" value="b"> font-size</label><br>
+        <label><input type="radio" name="q2" value="c"> text-style</label>
+      </div>
+
+      <div class="question">
+        <p>3. What keyword declares a constant variable in JavaScript?</p>
+        <label><input type="radio" name="q3" value="a"> var</label><br>
+        <label><input type="radio" name="q3" value="b"> let</label><br>
+        <label><input type="radio" name="q3" value="c"> const</label>
+      </div>
+
+      <button type="submit">Submit Quiz</button>
+    </form>
+
+    <div id="result"></div>
+  </main>
+
+  <footer>
+    <p>© 2025 Ameer Nakamoto</p>
+  </footer>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
