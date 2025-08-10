@@ -12,7 +12,6 @@ if (user) {
   userInfo.innerHTML = `<p>No user data found. Please <a href="signup.html">sign up</a> first.</p>`;
 }
 
-// Clear data
 clearBtn.addEventListener('click', () => {
   localStorage.removeItem('user');
   alert('User data cleared!');
