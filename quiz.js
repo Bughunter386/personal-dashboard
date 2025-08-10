@@ -20,7 +20,6 @@ document.getElementById('quizForm').addEventListener('submit', function (e) {
   const result = document.getElementById('result');
   result.innerText = `You got ${score} out of ${total} correct! 🎉`;
 
-  // Bonus: Color feedback
   if (score === total) {
     result.style.color = 'green';
   } else if (score === 0) {
