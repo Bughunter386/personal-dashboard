@@ -6,8 +6,8 @@ form.addEventListener('submit', function (e) {
 
   const username = document.getElementById('username').value.trim();
   const email = document.getElementById('email').value.trim();
-  const password = document.getElementById('password').value;
-  const confirm = document.getElementById('confirm').value;
+  const password = document.getElementById('password').value.trim();
+  const confirm = document.getElementById('confirm').value.trim();
 
   if (username === '' || email === '' || password === '' || confirm === '') {
     message.textContent = 'Please fill in all fields.';
@@ -37,7 +37,7 @@ form.addEventListener('submit', function (e) {
 
   localStorage.setItem('user', JSON.stringify(user));
   message.style.color = 'green';
-  message.textContent = 'Account created successfully! 🎉';
+  message.textContent = 'Account created successfully!';
 
   form.reset();
 });

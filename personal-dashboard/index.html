@@ -1,27 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Personal Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1 id="greeting">Hello, Guest!</h1>
-      <button id="themeToggle">Toggle Theme</button>
-      <div id="time"></div>
-    </header>
-
-    <section class="todo-section">
-      <h2>To-Do List</h2>
-      <input type="text" id="taskInput" placeholder="Add a task..." />
-      <button id="addTask">Add</button>
-      <ul id="taskList"></ul>
-    </section>
-  </div>
-
+  <h2>Login</h2>
+  <form id="loginForm">
+    <input type="text" id="loginUsername" placeholder="Username" required>
+    <input type="email" id="loginEmail" placeholder="Email" required>
+    <input type="password" id="loginPassword" placeholder="Password" required>
+    <button type="submit">Login</button>
+  </form>
+  <p><a href="register.html">Don't have an account? Register</a></p>
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,57 +1,74 @@
-// Greeting logic
-let user = localStorage.getItem('dashboardUser');
-if (!user) {
-  user = prompt("What's your name?");
-  localStorage.setItem('dashboardUser', user);
-}
-document.getElementById('greeting').textContent = `Hello, ${user}!`;
+window.onload = () => 
+document.getElementById("Login").style.display="none";
 
-// Theme toggle
-const toggle = document.getElementById('themeToggle');
-toggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark-theme');
-});
 
-// Live time
-function updateTime() {
-  const now = new Date();
-  document.getElementById('time').textContent = now.toLocaleTimeString();
-}
-setInterval(updateTime, 1000);
-updateTime();
+function doRegister() {
+    let name = document.getElementById("regName").value;
+    let email = document.getElementById("regEmail").value;
+    let password = document.getElementById("regPassword").value;
+    let result=register(name, email, password)
+    alert(result);
+    if(result==="Registration successful"){
+        document.getElementById("Register").style.display="none";
+        document.getElementById("Login").style.display="block";
 
-// To-Do List Logic
-const taskInput = document.getElementById('taskInput');
-const addTaskBtn = document.getElementById('addTask');
-const taskList = document.getElementById('taskList');
-
-let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-
-function renderTasks() {
-  taskList.innerHTML = '';
-  tasks.forEach((task, index) => {
-    const li = document.createElement('li');
-    li.textContent = task;
-    li.onclick = () => {
-      tasks.splice(index, 1);
-      saveTasks();
-    };
-    taskList.appendChild(li);
-  });
+    }
 }
 
-function saveTasks() {
-  localStorage.setItem('tasks', JSON.stringify(tasks));
-  renderTasks();
+function doLogin() {
+    let email = document.getElementById("logEmail").value;
+    let password = document.getElementById("logPassword").value;
+    alert(login(email, password));
 }
 
-addTaskBtn.addEventListener('click', () => {
-  const task = taskInput.value.trim();
-  if (task) {
-    tasks.push(task);
-    taskInput.value = '';
-    saveTasks();
-  }
-});
 
-renderTasks();
+
+function register (name, email, password) {
+
+    var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!pattern.test(email)){
+        return "Please use a valid email address";
+    }
+
+    // get item from local storage
+    // convert from string
+    const getusers = localStorage.getItem("users");
+    
+    const users = JSON.parse(getusers) || [];
+
+    const check = users.find((user) => user.email === email);
+
+    if (check) {
+        return "Email aready exist";
+    }
+
+    users.push({name, email, password});
+
+    const str = JSON.stringify(users);
+
+    localStorage.setItem("users",JSON.stringify(users));
+
+    return "Registration successful";
+
+}
+
+
+function login (email, password) {
+
+    const getusers = localStorage.getItem("users");
+    
+    const users = JSON.parse(getusers) || [];
+
+    const user = users.find((user) => user.email === email && user.password === password);
+
+    if (!user) {
+        return "Invalid credentials";
+    } else {
+         localStorage.setitem("currentUser", JSON.stringify(user));
+         document.getElementById("Login").style.display = "none";
+         document.getElementById("Dashboard").style.display = "block";
+         document.getElementById("welcomeMsg").innerText = 'Welcome, ${user.name}';
+         return 'Login successful . Welcome ${user.name}';
+    }
+}
